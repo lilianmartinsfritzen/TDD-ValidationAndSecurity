@@ -29,14 +29,12 @@ public class User implements UserDetails, Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String firstName;
-	private String lastName;
 	
 	@Column(unique = true)
 	private String email;
 	private String password;
-										 // O uso abaixo é um exigência do Spring Security
-	@ManyToMany(fetch = FetchType.EAGER) // O argumento fetch = FetchType.EAGER força a busca de usuários no DB já vir com as Roles.
+										 
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "tb_user_role",
 		joinColumns = @JoinColumn(name = "user_id"),
 		inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -45,11 +43,9 @@ public class User implements UserDetails, Serializable {
 	public User() {		
 	}
 
-	public User(Long id, String firstName, String lastName, String email, String password) {
+	public User(Long id, String email, String password) {
 		super();
 		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
 	}
@@ -60,22 +56,6 @@ public class User implements UserDetails, Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
 	}
 
 	public String getEmail() {
