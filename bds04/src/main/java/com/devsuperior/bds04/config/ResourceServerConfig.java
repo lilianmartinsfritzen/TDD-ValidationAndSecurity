@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 @Configuration
 @EnableResourceServer
-public class ControllerServerConfig extends ResourceServerConfigurerAdapter {
+public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	
 	@Autowired
 	private Environment env;     // Environment é o ambiente de execução da aplicação
@@ -24,9 +24,9 @@ public class ControllerServerConfig extends ResourceServerConfigurerAdapter {
 	
 	private static final String[] PUBLIC = { "/oauth/token", "/h2-console/**" };
 	
-	private static final String[] OPERATOR_OR_ADMIN = { "/products/**", "/categories/**" };
+	private static final String[] ROUTES_GET = { "/cities/**", "/events/**" };
 	
-	private static final String[] ADMIN = { "/users/**" };
+	private static final String[] EVENT_POST = { "/events/**" };
 
 	@Override
 	public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
@@ -36,16 +36,14 @@ public class ControllerServerConfig extends ResourceServerConfigurerAdapter {
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
 		
-		// Configuração necessária para liberar o H2
 		if (Arrays.asList(env.getActiveProfiles()).contains("test")) {
 			http.headers().frameOptions().disable();
 		}
 		
 		http.authorizeRequests()
 		.antMatchers(PUBLIC).permitAll()
-		.antMatchers(HttpMethod.GET, OPERATOR_OR_ADMIN).permitAll()
-		.antMatchers(OPERATOR_OR_ADMIN).hasAnyRole("OPERATOR", "ADMIN")
-		.antMatchers(ADMIN).hasRole("ADMIN")
-		.anyRequest().authenticated();		
+		.antMatchers(HttpMethod.GET, ROUTES_GET).permitAll()
+		.antMatchers(HttpMethod.POST, EVENT_POST).hasAnyRole("CLIENT", "ADMIN")
+		.anyRequest().hasAnyRole("ADMIN");		
 	}	
 }
