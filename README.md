@@ -10,7 +10,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=49AA26&labelColor=000000" alt="PRs welcome!" />
-<a href="https://github.com/lilianmartinsfritzen/TDD-challenge/blob/main/LICENSE">
+<a href="https://github.com/lilianmartinsfritzen/TDD-ValidationAndSecurity/blob/main/LICENSE">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000" />
 </a>
 </p>
@@ -213,6 +213,6 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.c
 
 <h2 id="desenvolvedora">Desenvolvedora</h2> 
   <img src="https://user-images.githubusercontent.com/83084256/134750093-acf555ae-b1b0-4a4e-a22c-421bf98f15a0.png" width="100" height="100" /> <br>
-<a href="https://www.linkedin.com/in/lilian-martins-fritzen/" target="_blank">
+<a href="https://www.linkedin.com/in/lilian-martins-fritzen/" target="blank">
   <img src="https://img.shields.io/static/v1?label=Linkedin&message=lilianmartinsfritzen&color=0A66C2&style=for-the-badge&logo=linkedin" />
 </a>
