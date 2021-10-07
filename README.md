@@ -212,7 +212,7 @@ POST - New Event: http://localhost:8080/events
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/lilianmartinsfritzen/TDD-ValidationAndSecurity/blob/main/LICENSE) para mais detalhes.
 
 <h2 id="desenvolvedora">Desenvolvedora</h2> 
-  <img style="border-radius: 50%" border="50%" src="https://user-images.githubusercontent.com/83084256/134750093-acf555ae-b1b0-4a4e-a22c-421bf98f15a0.png" width="100" height="100" /> <br>
+  <img src="https://user-images.githubusercontent.com/83084256/134750093-acf555ae-b1b0-4a4e-a22c-421bf98f15a0.png" width="100" height="100" /> <br>
 <a href="https://www.linkedin.com/in/lilian-martins-fritzen/" target="_blank">
   <img src="https://img.shields.io/static/v1?label=Linkedin&message=lilianmartinsfritzen&color=0A66C2&style=for-the-badge&logo=linkedin" />
 </a>
